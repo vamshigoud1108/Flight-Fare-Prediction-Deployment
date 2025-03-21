@@ -5,7 +5,7 @@
 This project aims to predict flight fares based on various input parameters such as departure and arrival times, source, destination, number of stops, and airline preferences. It leverages machine learning to provide accurate fare estimates and is deployed using Render for real-time predictions.
 
 ## Live Demo
-Check out the live application here.![Flight Fare Predictor](https://flight-fare-predictor-gmoy.onrender.com/)
+Check out the live application here.[Flight Fare Predictor](https://flight-fare-predictor-gmoy.onrender.com/)
 
 ## Dataset
 The dataset contains flight details including:
