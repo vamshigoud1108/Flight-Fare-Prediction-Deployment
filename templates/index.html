@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Flight Fare Prediction</title>
+    <link rel="icon" href="static/images/travelling.png" type="image/png">
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Flight Fare Prediction</h2>
+      <form method="POST">
+        <div class="input-box">
+          <label>Departure Date & Time</label>
+          <input type="datetime-local" name="dep_date" required />
+        </div>
+        <div class="input-box">
+          <label>Arrival Date & Time</label>
+          <input type="datetime-local" name="arr_date" required />
+        </div>
+        <div class="input-box">
+          <label>Source</label>
+          <select name="source" id="source" required>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <label>Destination</label>
+          <select name="destination" id="destination" required>
+            <option value="New_Delhi">New_Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Cochin">Cochin</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Hyderabad">Hyderabad</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <label>Stopage</label>
+          <select name="stops" id="stops" required>
+            <option value="0">Non-Stop</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <label>Airline you want to travel?</label>
+          <select name="airline" id="airline" required>
+            <option value="Jet Airways">Jet Airways</option>
+            <option value="IndiGo">IndiGo</option>
+            <option value="Air India">Air India</option>
+            <option value="Multiple carriers">Multiple carriers</option>
+            <option value="SpiceJet">SpiceJet</option>
+            <option value="Vistara">Vistara</option>
+            <option value="Air Asia">Air Asia</option>
+            <option value="GoAir">GoAir</option>
+            <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+            <option value="Jet Airways Business">Jet Airways Business</option>
+            <option value="Vistara Premium economy">Vistara Premium economy</option>
+            <option value="Trujet">Trujet</option>
+          </select>
+        </div>
+        <button type="submit">Predict</button>
+      </form>
+      <h3>{{ prediction}}</h3>
+    </div>
+  </body> 
+  <script>
+    document.getElementById("source").addEventListener("change", function () {
+      let sourceValue = this.value;
+      let destinationDropdown = document.getElementById("destination");
+  
+      // Enable all options first
+      for (let option of destinationDropdown.options) {
+        option.disabled = false;
+      }
+  
+      // Disable the selected source in destination
+      if (sourceValue) {
+        let matchingOption = destinationDropdown.querySelector(`option[value="${sourceValue}"]`);
+        if (matchingOption) {
+          matchingOption.disabled = true;
+        }
+      }
+    });
+  </script>
+  
+</html>
