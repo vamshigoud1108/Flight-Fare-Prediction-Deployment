@@ -25,6 +25,12 @@ The dataset contains flight details including:
 - **Machine Learning**: Scikit-learn (for model training)
 - **Deployment**: Render
 
+## Application Preview
+
+Here is a screenshot of the deployed app:
+
+![App Screenshot](static/images/demo_screenshot.png)
+
 ## Folder Structure
 ```
 Flight-Fare-Prediction-Deployment/
